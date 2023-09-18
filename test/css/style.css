@@ -1,0 +1,168 @@
+/*общие стили*/
+@font-face {font-family: "Bebas Neue";
+    font-style: bold;
+    font-weight: 700;
+    src: url("../fonts/BebasNeueBold.woff") format("woff")}
+html, body {overflow-x: hidden;}
+body{font-family: Montserrat;font-size: 16px;font-weight: 500;text-align: left;text-transform: uppercase;height: 100vh; margin: 0;position:relative;}
+.container{padding: 0 120px;}
+/*стиль заднего фона*/
+.kosmos{background:url(../img/kosmos.jpg) no-repeat;z-index: -1;position: absolute;height: 100%;width: 100%;}
+.shum{background:url(../img/shum.png);height: 100%;z-index:-1;position: absolute;animation:shummove 20s ease-in infinite, shum 2s;width: 4000px;opacity: 0;box-sizing: border-box;}
+/*стили навигации*/
+.mobile{opacity: 0;}
+.hamburger-menu{opacity: 0;}
+header{display:grid;grid-auto-flow: column;padding-top: 30px;}
+.nav{display: grid;grid-auto-flow: column;text-align: center;align-items: center;width: 760px;justify-self: end;}
+.btn{background-color: #F2E1C2;padding: 10px 0;border-radius: 4px;width: 179px;justify-self: end;transition: 0.5s;}
+.btn_font{font-weight: 600;}
+.btn:hover{background-color: #F23207;color: #F2E1C2;}
+.nav a{text-decoration: none;color: #F2E1C2;transition: 0.5s;}
+.nav a:hover{color: #F23207;}
+/*стили бургера*/
+#menu__toggle {
+    opacity: 0;
+  }
+
+  .menu__btn {
+    display: flex; 
+    align-items: center;  
+    position: fixed;
+    top: 35px;
+    right: 100px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #F2E1C2;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #F2E1C2;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+  
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item:hover {
+    background-color: #F2E1C2;
+  }
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+    z-index: 3;
+  }
+  .menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+/*стили секции*/
+.vector{position: absolute;animation: vipad 2s ease-in;overflow: hidden;padding: 0 2px;}
+.circle1{width: 6px;height: 6px;background: white;-moz-border-radius: 50px;-webkit-border-radius: 50px;border-radius: 50px;}
+.circle2{width: 10px;height: 10px;background: white;-moz-border-radius: 50px;-webkit-border-radius: 50px;border-radius: 50px;margin-left: -2px;animation: 1s ease-in 1s poyavlenie;}
+.vl{border-left: 2px solid white;height: 597px;margin-left: 2.2px;top: 0;}
+.subtitle{font-size: 36px;text-align: left;margin: 120px 0 0 31px;color: #F23207;padding: 10px 0 0;animation: 1s ease-in  subtitle;}
+.title{font-family: Bebas Neue;font-size: 715px;font-weight: 700;text-align: center;margin: 0;padding: 0;line-height: 95%;letter-spacing: -15px;background: url(../img/Mars.gif);-webkit-background-clip: text;-webkit-text-fill-color: transparent;animation: 2.5s ease-in  title;}
+/*анимация линии*/
+@keyframes vipad{
+    0%{height: 0;}
+    100%{height: 100%;}
+}
+@keyframes poyavlenie{
+    0%{opacity: 0;}
+    100%{opacity: 100%;}
+}
+/*анимация текста*/
+@keyframes subtitle{
+    0%{opacity: 0;}
+    10%{opacity: 0;}
+    100%{opacity: 100%;}
+}
+@keyframes title{
+    0%{opacity: 0;}
+    70%{opacity: 0;}
+    100%{opacity: 100%;}
+}
+/*анимация шума*/
+@keyframes shum{
+    0%{left: 0;}
+    100%{left: -1000px;}
+}
+@keyframes shummove{
+    0%{left: 0;opacity: 0;}
+    10%{opacity: 1;}
+    80%{opacity: 1;}
+    100%{left: -2000px; opacity: 0;}
+}
+/*стили popup*/
+.title_form{font-family: Bebas Neue;font-size: 114px;font-weight: 700;text-align: left;margin-top: 100px;line-height: 114px;}
+.input_form{display: grid;grid-auto-flow: column;margin-top: 80px;}
+.popup__bg{position: fixed;top: 0;left: 0;width: 100%;height: 100vh;background: #262526;opacity: 0;pointer-events: none;}
+.text_popup{font-family: Montserrat;font-size: 16px;font-weight: 700;line-height: 20px;text-align: left;}
+.popup__bg.active {opacity: 1;pointer-events: all;}
+.popup {top: 0;left: 0;width: 100%;height: 100%;position: absolute;background: #F2E1C2;box-sizing: border-box;padding: 0 120px;}
+.close-popup {position: absolute;top: 100px;right: 120px;cursor: pointer;background-color: #262526;padding: 10px;}
+.popup label {width: 387px;}
+.popup .label__text {font-size: 14px;text-transform: uppercase;font-weight: 500;color: #cfd0d3;margin-bottom: 5px;}
+.popup input {height: 32px;font-size: 18px;border: none;outline: none;border-bottom: 1px solid #262526;background-color: #F2E1C2;color: #262526;width: 375px;margin-top: 20px;}
+.popup button {margin: 60px 10px 0 0;width: 387px;height: 40px;display: flex;align-items: center;justify-content: center;color: #F2E1C2;font-size: 18px;background: #262526;cursor: pointer;text-transform: uppercase;transition: 0.5s all;float: right;border-radius: 4px;}
+.popup button:hover {background: #F2E1C2;color:#F23207;transition: 0.5s all;}
+input:-internal-autofill-selected {background-color: -internal-light-dark(#F2E1C2, #262526) !important;}
+/*адаптив*/
+@media (max-width: 1400px){.title{font-size: 500px;text-align: left;margin-left: 25px;}.vl{height: 435px;}.popup input{width: 200px;}.popup label{width: 200px;}}
+@media (max-width: 1100px){.title{font-size: 400px;}.nav{display: none;}.hamburger-menu{opacity: 1;}.mobile{opacity: 1;text-align: center;margin: 0 20px 0 0;}.vl{height: 360px;}}
+@media (max-width: 900px){.title{font-size: 300px;}.container{padding: 0 50px;}.vl{height: 275px;}.popup input{width: 150px;}.popup label{width: 150px;}.popup{padding: 0 50px;}.title_form{font-size: 50px;margin-top: 65px;}.close-popup{right: 50px;}}
+@media (max-width: 600px){.title{font-size: 200px;}.container{padding: 0 50px;}.menu__btn {right: 50px;}.popup input{width: 80px;}.popup label{width: 80px;hyphens: auto;}.popup button{width: 200px;}}
+@media (max-width: 450px){.title{font-size: 200px;}.container{padding: 0 5px;}.menu__btn {right: 20px;}.popup{padding: 0 5px;}}
